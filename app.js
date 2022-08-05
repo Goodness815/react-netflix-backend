@@ -19,6 +19,9 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(cors())
 app.use(express.json())
+app.get("/", (req, res) => {
+  res.send("React Netflix Backend")
+})
 app.use('/api/auth', authRouter)
 app.use('/api/users', auth, usersRouter)
 app.use('/api/movies', auth, moviesRouter)
