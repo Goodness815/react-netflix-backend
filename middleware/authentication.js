@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
   const token = authHeader.split(' ')[1]
 
   try {
-    const payload = jwt.verify(token, process.env.SECRET_KEY)
+    const payload = jwt.verify(token, process.env.SECRET_KEY || "netflixbackend")
     if (payload) {
 
       // attach the user to the routes
